@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciador de Estudos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .barra {
+            width: 100%;
+            background-color: #eee;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .progresso {
+            width: 70%; /* simula tarefas urgentes */
+            background-color: red;
+            color: white;
+            padding: 5px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>PAINEL DE ROTINAS ACADÊMICAS</h1>
+
+<div class="container">
+
+    <!-- DISCIPLINAS -->
+    <div class="card">
+        <h2>Cadastrar Disciplina</h2>
+        <form>
+            <label>Disciplina:</label><br>
+            <input type="text" name="disciplina">
+            <br><br>
+            <input type="submit" value="Salvar">
+        </form>
+    </div>
+
+    <!-- ATIVIDADES -->
+    <div class="card">
+        <h2>Atividades</h2>
+        <p>Acesse e gerencie suas tarefas acadêmicas.</p>
+        <button onclick="alert('Funcionalidade em desenvolvimento')">
+            Ver Atividades
+        </button>
+    </div>
+
+    <!-- AGENDA -->
+    <div class="card">
+        <h2>Agenda</h2>
+        <p>Organize suas datas e prazos.</p>
+        <button onclick="alert('Agenda em desenvolvimento')">
+            Acessar Agenda
+        </button>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="card">
+        <h2>Prioridades</h2>
+        <p>Tarefas próximas do prazo:</p>
+
+        <div class="barra">
+            <div class="progresso">
+                70% Urgente
+            </div>
+        </div>
+
+        <small>Quanto maior a barra, maior a urgência das tarefas.</small>
+    </div>
+
+</div>
+
+</body>
+</html>
