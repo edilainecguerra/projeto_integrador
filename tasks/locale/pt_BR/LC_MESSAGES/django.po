@@ -1,0 +1,116 @@
+# Portuguese (Brazil) translations for StudyFlow task app.
+msgid ""
+msgstr ""
+"Project-Id-Version: StudyFlow\n"
+"POT-Creation-Date: 2026-05-09 00:00+0000\n"
+"PO-Revision-Date: 2026-05-09 00:00+0000\n"
+"Last-Translator: Auto-generated <auto@example.com>\n"
+"Language-Team: Portuguese <pt_BR@example.com>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../models.py:8
+msgid "Low"
+msgstr "Baixa"
+
+#: ../models.py:9
+msgid "Medium"
+msgstr "Média"
+
+#: ../models.py:10
+msgid "High"
+msgstr "Alta"
+
+#: ../models.py:13
+msgid "User"
+msgstr "Usuário"
+
+#: ../models.py:14
+msgid "Title"
+msgstr "Título"
+
+#: ../models.py:15
+msgid "Description"
+msgstr "Descrição"
+
+#: ../models.py:16
+msgid "Due Date"
+msgstr "Data de Vencimento"
+
+#: ../models.py:17
+msgid "Priority"
+msgstr "Prioridade"
+
+#: ../models.py:18
+msgid "Completed"
+msgstr "Concluída"
+
+#: ../models.py:21
+msgid "Task"
+msgstr "Tarefa"
+
+#: ../models.py:22
+msgid "Tasks"
+msgstr "Tarefas"
+
+#: ../../tasks/list.html:4
+msgid "My Tasks"
+msgstr "Minhas Tarefas"
+
+#: ../../tasks/list.html:7
+msgid "Logout"
+msgstr "Sair"
+
+#: ../../tasks/list.html:10
+msgid "New Task"
+msgstr "Nova Tarefa"
+
+#: ../../tasks/list.html:15
+msgid "Completed"
+msgstr "Concluída"
+
+#: ../../tasks/list.html:17
+msgid "Pending"
+msgstr "Pendente"
+
+#: ../../tasks/list.html:18
+msgid "Complete"
+msgstr "Concluir"
+
+#: ../../tasks/list.html:21
+msgid "Delete"
+msgstr "Excluir"
+
+#: ../../tasks/login.html:1
+msgid "Login"
+msgstr "Entrar"
+
+#: ../../tasks/login.html:5
+msgid "Username"
+msgstr "Usuário"
+
+#: ../../tasks/login.html:8
+msgid "Password"
+msgstr "Senha"
+
+#: ../../tasks/login.html:11
+msgid "Enter"
+msgstr "Entrar"
+
+#: ../../tasks/new.html:1
+msgid "New Task"
+msgstr "Nova Tarefa"
+
+#: ../../tasks/new.html:5
+msgid "Title"
+msgstr "Título"
+
+#: ../../tasks/new.html:8
+msgid "Due Date"
+msgstr "Data de Vencimento"
+
+#: ../../tasks/new.html:11
+msgid "Save"
+msgstr "Salvar"
