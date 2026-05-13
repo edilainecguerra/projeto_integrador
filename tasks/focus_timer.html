@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Focus Timer" %} - StudyFlow{% endblock %}
+
+{% block content %}
+<div class="mx-auto max-w-5xl rounded-[2rem] bg-white p-8 shadow-lg shadow-slate-200/60">
+    <div class="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+        <section>
+            <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+                <div>
+                    <p class="text-sm uppercase tracking-[0.3em] text-blue-700">{% trans "Focus Timer" %}</p>
+                    <h1 class="mt-3 text-4xl font-headline font-extrabold text-slate-900">{% trans "Stay in the zone with Pomodoro rhythm." %}</h1>
+                </div>
+                <div class="rounded-3xl bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700">{% trans "Session based" %}</div>
+            </div>
+            <p class="max-w-2xl text-slate-600">{% trans "Use focused work intervals with short breaks to boost concentration and finish more study tasks." %}</p>
+
+            <div class="mt-10 rounded-[2rem] border border-slate-200 bg-slate-50 p-8 text-center shadow-sm">
+                <div class="mb-4 text-sm uppercase tracking-[0.3em] text-slate-500">{% trans "Current mode" %}</div>
+                <div id="timer-mode" class="text-base font-semibold text-slate-900">{% trans "Focus" %}</div>
+                <div id="timer-display" class="mt-6 text-[5rem] font-bold text-slate-900">25:00</div>
+                <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+                    <button id="start-pause" class="inline-flex items-center justify-center rounded-full bg-blue-700 px-8 py-3 text-sm font-semibold text-white transition hover:bg-blue-800">{% trans "Start" %}</button>
+                    <button id="reset" class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-8 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100">{% trans "Reset" %}</button>
+                </div>
+                <div class="mt-8 grid gap-3 sm:grid-cols-3">
+                    <button data-mode="focus" class="mode-btn rounded-3xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100">{% trans "Focus 25" %}</button>
+                    <button data-mode="short_break" class="mode-btn rounded-3xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100">{% trans "Short break 5" %}</button>
+                    <button data-mode="long_break" class="mode-btn rounded-3xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100">{% trans "Long break 15" %}</button>
+                </div>
+                <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+                    <label class="flex items-center gap-3 rounded-3xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700">
+                        <span>{% trans "Custom" %}</span>
+                        <input id="custom-minutes" type="number" min="1" max="180" value="30" class="w-20 rounded-2xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100" />
+                    </label>
+                    <button id="custom-mode" data-mode="custom" class="mode-btn rounded-3xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100">{% trans "Custom timer" %}</button>
+                </div>
+            </div>
+        </section>
+
+        <aside class="space-y-6">
+            <div class="rounded-[2rem] bg-blue-700 p-8 text-white shadow-lg shadow-blue-700/10">
+                <p class="text-sm uppercase tracking-[0.3em] text-blue-100">{% trans "How it works" %}</p>
+                <h2 class="mt-4 text-2xl font-semibold">{% trans "Pomodoro cadence" %}</h2>
+                <p class="mt-4 text-sm leading-6 text-blue-100/90">{% trans "Alternate between focused work and breaks to maintain energy. After four sessions, take a longer rest." %}</p>
+                <div class="mt-8 space-y-4">
+                    <div class="rounded-3xl bg-blue-800/80 p-4">
+                        <p class="text-xs uppercase tracking-[0.3em] text-blue-100">{% trans "Focus" %}</p>
+                        <p class="mt-2 text-lg font-semibold">25 {% trans "minutes" %}</p>
+                    </div>
+                    <div class="rounded-3xl bg-blue-800/80 p-4">
+                        <p class="text-xs uppercase tracking-[0.3em] text-blue-100">{% trans "Short break" %}</p>
+                        <p class="mt-2 text-lg font-semibold">5 {% trans "minutes" %}</p>
+                    </div>
+                    <div class="rounded-3xl bg-blue-800/80 p-4">
+                        <p class="text-xs uppercase tracking-[0.3em] text-blue-100">{% trans "Long break" %}</p>
+                        <p class="mt-2 text-lg font-semibold">15 {% trans "minutes" %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-[2rem] bg-white p-6 shadow-lg shadow-slate-200/50 ring-1 ring-slate-200/80">
+                <p class="text-sm uppercase tracking-[0.3em] text-slate-500">{% trans "Tips" %}</p>
+                <ul class="mt-4 space-y-3 text-sm text-slate-600">
+                    <li>• {% trans "Choose a single task for each session." %}</li>
+                    <li>• {% trans "Put your phone away while the timer runs." %}</li>
+                    <li>• {% trans "Take a walk during the long break." %}</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<script>
+(function() {
+    const timerModes = {
+        focus: { label: '{% trans "Focus" %}', seconds: 25 * 60 },
+        short_break: { label: '{% trans "Short break" %}', seconds: 5 * 60 },
+        long_break: { label: '{% trans "Long break" %}', seconds: 15 * 60 },
+        custom: { label: '{% trans "Custom" %}', seconds: 30 * 60 }
+    };
+
+    let currentMode = 'focus';
+    let secondsLeft = timerModes[currentMode].seconds;
+    let timerInterval = null;
+    const display = document.getElementById('timer-display');
+    const modeLabel = document.getElementById('timer-mode');
+    const startPauseButton = document.getElementById('start-pause');
+    const resetButton = document.getElementById('reset');
+    const customMinutesInput = document.getElementById('custom-minutes');
+    const modeButtons = document.querySelectorAll('.mode-btn');
+
+    function formatTime(seconds) {
+        const minutes = String(Math.floor(seconds / 60)).padStart(2, '0');
+        const secs = String(seconds % 60).padStart(2, '0');
+        return `${minutes}:${secs}`;
+    }
+
+    function renderTimer() {
+        display.textContent = formatTime(secondsLeft);
+        modeLabel.textContent = timerModes[currentMode].label;
+    }
+
+    function activateButton(button, active) {
+        if (active) {
+            button.classList.add('bg-blue-700', 'text-white', 'hover:bg-blue-800');
+            button.classList.remove('bg-white', 'text-slate-700', 'hover:bg-slate-100');
+        } else {
+            button.classList.remove('bg-blue-700', 'text-white', 'hover:bg-blue-800');
+            button.classList.add('bg-white', 'text-slate-700', 'hover:bg-slate-100');
+        }
+    }
+
+    function setMode(mode) {
+        currentMode = mode;
+        secondsLeft = timerModes[mode].seconds;
+        renderTimer();
+        modeButtons.forEach(button => {
+            activateButton(button, button.dataset.mode === mode);
+        });
+        if (timerInterval) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            startPauseButton.textContent = '{% trans "Start" %}';
+        }
+    }
+
+    function startTimer() {
+        if (timerInterval) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            startPauseButton.textContent = '{% trans "Start" %}';
+            return;
+        }
+
+        timerInterval = setInterval(() => {
+            if (secondsLeft <= 0) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                startPauseButton.textContent = '{% trans "Start" %}';
+                return;
+            }
+            secondsLeft -= 1;
+            renderTimer();
+        }, 1000);
+        startPauseButton.textContent = '{% trans "Pause" %}';
+    }
+
+    startPauseButton.addEventListener('click', startTimer);
+    resetButton.addEventListener('click', () => {
+        secondsLeft = timerModes[currentMode].seconds;
+        renderTimer();
+        if (timerInterval) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            startPauseButton.textContent = '{% trans "Start" %}';
+        }
+    });
+
+    modeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            if (button.dataset.mode === 'custom') {
+                const minutes = Number(customMinutesInput.value);
+                if (!Number.isInteger(minutes) || minutes < 1) {
+                    customMinutesInput.focus();
+                    return;
+                }
+                timerModes.custom.seconds = minutes * 60;
+                timerModes.custom.label = `{% trans "Custom" %} ${minutes} {% trans "minutes" %}`;
+                setMode('custom');
+            } else {
+                setMode(button.dataset.mode);
+            }
+        });
+    });
+
+    setMode(currentMode);
+})();
+</script>
+{% endblock %}

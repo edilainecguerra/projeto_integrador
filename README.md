@@ -37,3 +37,22 @@ Este projeto é uma aplicação Django.
     python manage.py createsuperuser
 
 - O arquivo `.gitignore` já está configurado para ignorar arquivos de ambiente virtual, banco de dados e outros arquivos temporários.
+
+## Internationalization (i18n) and Translations
+
+This project supports multiple languages using Django's i18n system. To add or edit translations:
+
+1. Mark all user-facing text in your templates with `{% trans "Text" %}` and in Python code with `gettext_lazy("Text")` or `_("Text")`.
+2. Run the following command to extract translation strings and create the translation file for Brazilian Portuguese:
+
+    python manage.py makemessages -l pt_BR
+
+   This will create the file `locale/pt_BR/LC_MESSAGES/django.po`.
+
+3. Open `django.po` and fill in the `msgstr` fields with the Portuguese translations for each `msgid`.
+
+4. After editing and saving the `.po` file, compile the translations with:
+
+    python manage.py compilemessages
+
+Django will then use these translations automatically based on the user's language preference.
