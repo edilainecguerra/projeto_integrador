@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tasks | The Academic Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-variant": "#e1e3e4",
+              "background": "#f8f9fa",
+              "on-secondary-fixed-variant": "#005312",
+              "secondary-fixed": "#a3f69c",
+              "on-primary-fixed-variant": "#00468c",
+              "surface-dim": "#d9dadb",
+              "surface-container-highest": "#e1e3e4",
+              "outline": "#727783",
+              "on-tertiary-container": "#dfd4ff",
+              "on-surface": "#191c1d",
+              "on-tertiary-fixed-variant": "#4f00d0",
+              "secondary-fixed-dim": "#88d982",
+              "surface-container-high": "#e7e8e9",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-container": "#edeeef",
+              "tertiary-fixed": "#e8deff",
+              "error-container": "#ffdad6",
+              "primary": "#00478d",
+              "on-tertiary-fixed": "#20005f",
+              "tertiary-container": "#6934eb",
+              "tertiary": "#5000d2",
+              "primary-fixed-dim": "#a9c7ff",
+              "error": "#ba1a1a",
+              "surface-tint": "#005db6",
+              "on-surface-variant": "#424752",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed": "#001b3d",
+              "secondary": "#1b6d24",
+              "primary-container": "#005eb8",
+              "outline-variant": "#c2c6d4",
+              "surface-container-low": "#f3f4f5",
+              "inverse-surface": "#2e3132",
+              "surface": "#f8f9fa",
+              "on-secondary-fixed": "#002204",
+              "on-error-container": "#93000a",
+              "on-tertiary": "#ffffff",
+              "primary-fixed": "#d6e3ff",
+              "tertiary-fixed-dim": "#cdbdff",
+              "on-error": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-background": "#191c1d",
+              "secondary-container": "#a0f399",
+              "on-secondary-container": "#217128",
+              "inverse-primary": "#a9c7ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(248, 249, 250, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-40 bg-[#f8f9fa] dark:bg-slate-950 flex justify-between items-center px-8 py-4 w-full max-w-full">
+<div class="flex items-center gap-8">
+<h1 class="text-2xl font-bold text-[#005EB8] dark:text-blue-400 font-manrope tracking-tight">The Academic Curator</h1>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#005EB8] transition-colors font-manrope font-medium" href="#">Dashboard</a>
+<a class="text-[#005EB8] font-bold hover:text-[#005EB8] transition-colors font-manrope" href="#">Tasks</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#005EB8] transition-colors font-manrope font-medium" href="#">Study Calendar</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-surface-container-highest rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/10 border-none w-64" placeholder="Search tasks..." type="text"/>
+</div>
+<button class="p-2 text-on-surface-variant transition-all duration-200 ease-in-out hover:text-[#005EB8]">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant transition-all duration-200 ease-in-out hover:text-[#005EB8]">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img alt="User profile photo" class="w-10 h-10 rounded-full object-cover ring-2 ring-surface-container-high" data-alt="close up portrait of a college student wearing glasses and a minimalist sweater smiling warmly in a library" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXaCSyX2ujPGcwm7qJ19x-ykhkcZQ78TlTaTS9AtIOy1i2yPDIbunTHCh63mEYNmO-u-6LKwPNMMLLpNA7ZekZ6BY1YTOxuVxFDb0UgcpTid-7-JiVO4iDFL_eicD6261YQ-GNnjNQSf49pb4YEr91eSf8MZpjulfY2II9iPDmSinfhjvZMoACssD_QeXnqzhzZUfgJ4Dki14xmHX8phjULveOv34QEV2EU_1Pb9Wu3GawUFidjWgbiDqVa7vNOxiHOJBs6bPKVJjN"/>
+</div>
+</header>
+<div class="flex">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#e7e8e9] dark:bg-slate-900 flex flex-col h-full py-8 hidden lg:flex">
+<div class="px-8 mb-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">auto_stories</span>
+</div>
+<div>
+<h2 class="text-xl font-extrabold text-[#005EB8] font-manrope">Curator</h2>
+<p class="text-xs text-on-surface-variant font-medium">Academic Workspace</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 pl-5 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all py-3" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-manrope font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 pl-5 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all py-3" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-manrope font-medium">Study Calendar</span>
+</a>
+<a class="flex items-center gap-3 text-[#191c1d] dark:text-white font-bold border-l-4 border-[#005EB8] pl-4 py-3" href="#">
+<span class="material-symbols-outlined">checklist</span>
+<span class="font-manrope font-medium">Tasks</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 pl-5 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all py-3" href="#">
+<span class="material-symbols-outlined">timer</span>
+<span class="font-manrope font-medium">Focus Timer</span>
+</a>
+</nav>
+<div class="px-6 mb-6">
+<button class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-white rounded-xl font-bold flex items-center justify-center gap-2 active:scale-95 duration-150 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-xl">add</span>
+                    New Task
+                </button>
+</div>
+<div class="mt-auto border-t border-outline-variant/10 pt-4">
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 pl-5 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all py-3" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-manrope font-medium">Support</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 pl-5 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all py-3" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-manrope font-medium">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 lg:ml-64 p-8 min-h-screen">
+<!-- Editorial Header -->
+<header class="mb-12">
+<h2 class="text-5xl font-extrabold font-headline tracking-tighter text-on-surface mb-2">Master your agenda.</h2>
+<p class="text-lg text-on-surface-variant font-body">Manage your academic load with editorial precision.</p>
+</header>
+<!-- Tonal Filtering Row -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-10">
+<div class="flex gap-2">
+<button class="px-6 py-2 bg-primary text-white rounded-full font-semibold text-sm shadow-md">All Tasks</button>
+<button class="px-6 py-2 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high rounded-full font-semibold text-sm transition-colors">Economics</button>
+<button class="px-6 py-2 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high rounded-full font-semibold text-sm transition-colors">Philosophy</button>
+<button class="px-6 py-2 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high rounded-full font-semibold text-sm transition-colors">Data Science</button>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant/30 rounded-lg text-sm font-medium hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+                        Filter
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 border border-outline-variant/30 rounded-lg text-sm font-medium hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-lg">sort</span>
+                        Sort by Date
+                    </button>
+</div>
+</div>
+<!-- Bento Grid of Tasks -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- Subject Column: Economics -->
+<div class="space-y-6">
+<div class="flex items-center justify-between px-2">
+<h3 class="font-headline text-xl font-bold flex items-center gap-2">
+<span class="w-3 h-3 bg-tertiary rounded-full"></span>
+                            Economics 301
+                        </h3>
+<span class="text-xs font-bold text-on-surface-variant bg-surface-container-high px-2 py-1 rounded">3 TASKS</span>
+</div>
+<!-- Task Card: Pending High Priority -->
+<div class="bg-surface-container-low p-6 rounded-xl relative group transition-all duration-300 hover:bg-white hover:shadow-xl hover:shadow-on-surface/5">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-bold tracking-widest text-tertiary uppercase bg-tertiary-fixed px-2 py-1 rounded">HIGH PRIORITY</span>
+<button class="text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<h4 class="font-headline text-lg font-bold text-on-surface leading-tight mb-2">Quarterly Macroeconomic Thesis</h4>
+<p class="text-sm text-on-surface-variant mb-6 line-clamp-2">Complete the initial literature review and draft the hypothesis for the inflation model.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">event</span>
+<span class="text-xs font-semibold">Oct 12, 2023</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-error rounded-full"></span>
+<span class="text-xs font-bold text-on-surface">Pending</span>
+</div>
+</div>
+</div>
+<!-- Task Card: In Progress -->
+<div class="bg-surface-container-low p-6 rounded-xl relative group transition-all duration-300 hover:bg-white hover:shadow-xl hover:shadow-on-surface/5 border-l-4 border-primary">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-bold tracking-widest text-on-primary-fixed-variant uppercase bg-primary-fixed px-2 py-1 rounded">MEDIUM PRIORITY</span>
+<button class="text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<h4 class="font-headline text-lg font-bold text-on-surface leading-tight mb-2">Game Theory Worksheet</h4>
+<p class="text-sm text-on-surface-variant mb-6 line-clamp-2">Solve the Nash Equilibrium problems for the asymmetric duopoly scenarios.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">event</span>
+<span class="text-xs font-semibold">Tomorrow</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-12 h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-1/2 h-full bg-primary"></div>
+</div>
+<span class="text-xs font-bold text-on-surface">In Progress</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Subject Column: Philosophy -->
+<div class="space-y-6">
+<div class="flex items-center justify-between px-2">
+<h3 class="font-headline text-xl font-bold flex items-center gap-2">
+<span class="w-3 h-3 bg-primary rounded-full"></span>
+                            Ethics &amp; Logic
+                        </h3>
+<span class="text-xs font-bold text-on-surface-variant bg-surface-container-high px-2 py-1 rounded">2 TASKS</span>
+</div>
+<!-- Task Card: Focus Task (Highest Priority Style) -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border-2 border-primary shadow-xl shadow-primary/5 relative">
+<div class="absolute -top-3 left-6 bg-primary text-white text-[10px] px-3 py-1 rounded-full font-bold tracking-widest">CURRENT FOCUS</div>
+<div class="flex justify-between items-start mb-4 mt-2">
+<span class="text-[10px] font-bold tracking-widest text-secondary uppercase bg-secondary-fixed px-2 py-1 rounded">LOW PRIORITY</span>
+</div>
+<h4 class="font-headline text-xl font-extrabold text-on-surface leading-tight mb-2">Nietzsche Reflection Essay</h4>
+<p class="text-sm text-on-surface-variant mb-6">Write 500 words on the concept of 'Eternal Recurrence' in Thus Spoke Zarathustra.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined text-lg">timer</span>
+<span class="text-xs uppercase tracking-wider">Deep Work Session</span>
+</div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-primary-fixed flex items-center justify-center text-[10px] font-bold ring-2 ring-white">AI</div>
+<div class="w-6 h-6 rounded-full bg-secondary-fixed flex items-center justify-center text-[10px] font-bold ring-2 ring-white">RF</div>
+</div>
+</div>
+</div>
+<!-- Task Card: Completed -->
+<div class="bg-surface-container-low p-6 rounded-xl opacity-60 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">check_circle</span>
+<span class="text-[10px] font-bold tracking-widest text-on-secondary-fixed-variant uppercase">COMPLETED</span>
+</div>
+</div>
+<h4 class="font-headline text-lg font-bold text-on-surface leading-tight mb-2 line-through">Aristotle Reading Quiz</h4>
+<p class="text-sm text-on-surface-variant mb-4 italic">Submitted 2 hours ago</p>
+</div>
+</div>
+<!-- Statistics & Insights (Editorial Detail) -->
+<div class="space-y-8 xl:pl-4">
+<div class="bg-gradient-to-br from-primary to-primary-container p-8 rounded-2xl text-white shadow-2xl shadow-primary/20">
+<p class="text-on-primary-container font-medium text-sm mb-2">WEEKLY PROGRESS</p>
+<h3 class="text-4xl font-headline font-extrabold mb-6">84%</h3>
+<div class="w-full h-2 bg-white/20 rounded-full mb-6">
+<div class="w-[84%] h-full bg-white rounded-full"></div>
+</div>
+<p class="text-white/80 text-sm leading-relaxed">You've completed 12 tasks this week. Keep up the momentum to hit your GPA goal.</p>
+</div>
+<div class="bg-surface-container-high p-8 rounded-2xl">
+<h4 class="font-headline font-bold text-lg mb-6">Upcoming Deadlines</h4>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<div class="w-12 h-12 bg-white rounded-xl flex flex-col items-center justify-center text-on-surface shrink-0 shadow-sm">
+<span class="text-xs font-bold leading-none">OCT</span>
+<span class="text-xl font-black leading-none">15</span>
+</div>
+<div>
+<p class="font-bold text-sm">Data Structures Lab</p>
+<p class="text-xs text-on-surface-variant">Computer Science • 11:59 PM</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="w-12 h-12 bg-white rounded-xl flex flex-col items-center justify-center text-on-surface shrink-0 shadow-sm">
+<span class="text-xs font-bold leading-none">OCT</span>
+<span class="text-xl font-black leading-none">18</span>
+</div>
+<div>
+<p class="font-bold text-sm">Market Analysis Presentation</p>
+<p class="text-xs text-on-surface-variant">Economics • 10:30 AM</p>
+</div>
+</li>
+</ul>
+<button class="w-full mt-8 py-3 bg-white text-primary rounded-xl font-bold text-sm border border-outline-variant/20 hover:bg-primary hover:text-white transition-all">
+                            View Full Calendar
+                        </button>
+</div>
+</div>
+</div>
+<!-- Focus Mode Prompt (Floating Style) -->
+<div class="mt-16 p-10 bg-surface-container-lowest rounded-3xl border border-outline-variant/10 flex flex-col md:flex-row items-center gap-10">
+<div class="flex-1">
+<h3 class="text-3xl font-headline font-extrabold mb-4">Deep work starts here.</h3>
+<p class="text-on-surface-variant max-w-md leading-relaxed">Ready to clear your Economics backlog? Enter focus mode to silence notifications and activate the Pomodoro timer.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-8 py-4 bg-secondary text-white font-bold rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-lg shadow-secondary/20">
+                        Start Session
+                    </button>
+<button class="px-8 py-4 text-on-surface font-bold rounded-2xl hover:bg-surface-container-low transition-all">
+                        Learn More
+                    </button>
+</div>
+</div>
+</main>
+</div>
+<!-- Mobile Navigation (BottomNavBar) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 glass-panel border-t border-outline-variant/10 px-6 py-4 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-bold">DASHBOARD</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">checklist</span>
+<span class="text-[10px] font-bold">TASKS</span>
+</a>
+<div class="relative -top-8">
+<button class="w-14 h-14 bg-primary text-white rounded-full shadow-2xl shadow-primary/40 flex items-center justify-center">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-[10px] font-bold">CALENDAR</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">timer</span>
+<span class="text-[10px] font-bold">FOCUS</span>
+</a>
+</nav>
+</body></html>

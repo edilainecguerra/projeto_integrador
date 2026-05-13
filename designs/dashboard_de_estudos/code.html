@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard | The Academic Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#e1e3e4",
+                        "background": "#f8f9fa",
+                        "on-secondary-fixed-variant": "#005312",
+                        "secondary-fixed": "#a3f69c",
+                        "on-primary-fixed-variant": "#00468c",
+                        "surface-dim": "#d9dadb",
+                        "surface-container-highest": "#e1e3e4",
+                        "outline": "#727783",
+                        "on-tertiary-container": "#dfd4ff",
+                        "on-surface": "#191c1d",
+                        "on-tertiary-fixed-variant": "#4f00d0",
+                        "secondary-fixed-dim": "#88d982",
+                        "surface-container-high": "#e7e8e9",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container": "#edeeef",
+                        "tertiary-fixed": "#e8deff",
+                        "error-container": "#ffdad6",
+                        "primary": "#00478d",
+                        "on-tertiary-fixed": "#20005f",
+                        "tertiary-container": "#6934eb",
+                        "tertiary": "#5000d2",
+                        "primary-fixed-dim": "#a9c7ff",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#005db6",
+                        "on-surface-variant": "#424752",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#001b3d",
+                        "secondary": "#1b6d24",
+                        "primary-container": "#005eb8",
+                        "outline-variant": "#c2c6d4",
+                        "surface-container-low": "#f3f4f5",
+                        "inverse-surface": "#2e3132",
+                        "surface": "#f8f9fa",
+                        "on-secondary-fixed": "#002204",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#d6e3ff",
+                        "tertiary-fixed-dim": "#cdbdff",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "secondary-container": "#a0f399",
+                        "on-primary-container": "#c8daff",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#217128",
+                        "inverse-primary": "#a9c7ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #191c1d;
+        }
+        h1, h2, h3, .font-headline {
+            font-family: 'Manrope', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#e7e8e9] dark:bg-slate-900 flex flex-col h-full py-8 font-manrope font-medium z-50">
+<div class="px-6 mb-10">
+<h1 class="text-xl font-extrabold text-[#005EB8]">Curator</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Academic Workspace</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Active Tab: Dashboard -->
+<a class="flex items-center gap-3 text-[#191c1d] dark:text-white font-bold border-l-4 border-[#005EB8] pl-4 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 pl-5 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span>Study Calendar</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 pl-5 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="checklist">checklist</span>
+<span>Tasks</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 pl-5 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+<span>Focus Timer</span>
+</a>
+</nav>
+<div class="px-6 mt-auto space-y-6">
+<button class="w-full bg-primary text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-primary-container transition-all shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                New Task
+            </button>
+<div class="pt-6 border-t border-outline-variant/20 space-y-4">
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 hover:text-error transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Sign Out</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 ml-64 min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-40 bg-[#f8f9fa] dark:bg-slate-950 flex justify-between items-center px-8 py-4 w-full max-w-full font-manrope tracking-tight">
+<div class="flex items-center gap-4">
+<h2 class="text-2xl font-bold text-[#005EB8] dark:text-blue-400">The Academic Curator</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-high rounded-full border-none focus:ring-2 focus:ring-primary/20 w-64 text-sm" placeholder="Search resources..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-500 hover:text-[#005EB8] transition-all relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-background"></span>
+</button>
+<button class="text-slate-500 hover:text-[#005EB8] transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-sm">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="Close-up portrait of a young male student wearing glasses in a brightly lit library with blurred bookshelves behind him" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-fJMSIo4opxMUZuw-Y0sHx_m4Le3Wk-PT3e79RKiDMsbcwWkaunfqJ7h00sgzqwlXc2-d0veWrycARoHWineY2ZGJOT9sF1_vEskElk3jQoA6F8tH8EwJ8eIC6Mj1uhW6qFxw6EcPJOBasnchQgNsFNKp1j3zDWgFiOPhoD4iDTFrkKrJD1jQt4T6PwlODJ7AbV5j7OiE1VE-9dsJSNnoTAKmWCyaZvrCdONKLq-5xK3uHP-Gd9m5WLY3kE2LaVtN_yPvrCrEPlnI"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-8 space-y-8 max-w-7xl mx-auto w-full">
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row justify-between items-end gap-6">
+<div class="space-y-2">
+<h1 class="text-5xl font-extrabold tracking-tight text-on-surface">Good Morning, Alex.</h1>
+<p class="text-lg text-on-surface-variant font-body">Your concentration peak is expected at 10:30 AM today.</p>
+</div>
+<div class="bg-primary-container/10 p-4 rounded-xl flex items-center gap-4 border border-primary/10">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-wider text-primary">Current Streak</p>
+<p class="text-xl font-extrabold">12 Study Days</p>
+</div>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Weekly Progress Chart (8 cols) -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="text-xl font-bold">Weekly Progress</h3>
+<p class="text-sm text-on-surface-variant">Focus hours across all subjects</p>
+</div>
+<select class="bg-surface-container-low border-none rounded-lg text-sm font-medium focus:ring-0">
+<option>This Week</option>
+<option>Last Week</option>
+</select>
+</div>
+<div class="h-64 flex items-end justify-between gap-4 px-4">
+<!-- Chart Bar 1 -->
+<div class="flex flex-col items-center gap-3 w-full group">
+<div class="w-full bg-surface-container-highest rounded-full h-32 relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-primary h-2/3 group-hover:h-3/4 transition-all duration-300"></div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">MON</span>
+</div>
+<!-- Chart Bar 2 -->
+<div class="flex flex-col items-center gap-3 w-full group">
+<div class="w-full bg-surface-container-highest rounded-full h-48 relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-primary h-4/5 group-hover:h-5/6 transition-all duration-300"></div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">TUE</span>
+</div>
+<!-- Chart Bar 3 -->
+<div class="flex flex-col items-center gap-3 w-full group">
+<div class="w-full bg-surface-container-highest rounded-full h-40 relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-primary h-1/2 group-hover:h-2/3 transition-all duration-300"></div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">WED</span>
+</div>
+<!-- Chart Bar 4 (Active Today) -->
+<div class="flex flex-col items-center gap-3 w-full group">
+<div class="w-full bg-primary-container rounded-full h-56 relative overflow-hidden ring-4 ring-primary-container/20">
+<div class="absolute bottom-0 w-full bg-primary h-full"></div>
+</div>
+<span class="text-xs font-bold text-primary">THU</span>
+</div>
+<!-- Chart Bar 5 -->
+<div class="flex flex-col items-center gap-3 w-full group">
+<div class="w-full bg-surface-container-highest rounded-full h-36 relative overflow-hidden">
+<div class="absolute bottom-0 w-full bg-primary h-1/4"></div>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">FRI</span>
+</div>
+<!-- Chart Bar 6 -->
+<div class="flex flex-col items-center gap-3 w-full group">
+<div class="w-full bg-surface-container-highest rounded-full h-24 relative overflow-hidden"></div>
+<span class="text-xs font-bold text-on-surface-variant">SAT</span>
+</div>
+<!-- Chart Bar 7 -->
+<div class="flex flex-col items-center gap-3 w-full group">
+<div class="w-full bg-surface-container-highest rounded-full h-24 relative overflow-hidden"></div>
+<span class="text-xs font-bold text-on-surface-variant">SUN</span>
+</div>
+</div>
+</div>
+<!-- Today's Schedule (4 cols) -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-6 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-bold">Today's Schedule</h3>
+<span class="text-xs font-bold text-primary px-3 py-1 bg-primary/10 rounded-full">April 12</span>
+</div>
+<div class="space-y-4 flex-1">
+<div class="flex gap-4 group">
+<div class="flex flex-col items-center gap-1">
+<span class="text-[10px] font-bold text-on-surface-variant">09:00</span>
+<div class="w-0.5 flex-1 bg-outline-variant/30"></div>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-4 rounded-xl border-l-4 border-primary transition-all group-hover:shadow-md">
+<p class="text-xs font-bold text-primary mb-1">Lecture</p>
+<h4 class="font-bold text-sm">Advanced Macroeconomics</h4>
+<p class="text-[10px] text-on-surface-variant mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="location_on">location_on</span> Hall B-42
+                                </p>
+</div>
+</div>
+<div class="flex gap-4 group">
+<div class="flex flex-col items-center gap-1">
+<span class="text-[10px] font-bold text-on-surface-variant">11:30</span>
+<div class="w-0.5 flex-1 bg-outline-variant/30"></div>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-4 rounded-xl border-l-4 border-secondary transition-all group-hover:shadow-md">
+<p class="text-xs font-bold text-secondary mb-1">Deep Work</p>
+<h4 class="font-bold text-sm">Thesis Literature Review</h4>
+<p class="text-[10px] text-on-surface-variant mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="schedule">schedule</span> 1.5 Hours Remaining
+                                </p>
+</div>
+</div>
+<div class="flex gap-4 group opacity-60">
+<div class="flex flex-col items-center gap-1">
+<span class="text-[10px] font-bold text-on-surface-variant">14:00</span>
+</div>
+<div class="flex-1 bg-surface-container p-4 rounded-xl border-l-4 border-outline-variant">
+<p class="text-xs font-bold text-on-surface-variant mb-1">Seminar</p>
+<h4 class="font-bold text-sm">Research Methodology</h4>
+</div>
+</div>
+</div>
+<button class="mt-6 text-sm font-bold text-primary flex items-center justify-center gap-2 py-2 hover:bg-primary/5 rounded-lg transition-colors">
+                        View Full Calendar <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Prioritized Tasks (6 cols) -->
+<div class="md:col-span-6 bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-bold">High Priority</h3>
+<button class="text-primary p-2 bg-primary/5 rounded-full hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined" data-icon="sort">sort</span>
+</button>
+</div>
+<div class="space-y-3">
+<div class="group flex items-center gap-4 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all">
+<button class="w-6 h-6 rounded-full border-2 border-primary/40 flex items-center justify-center hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined text-transparent group-hover:text-primary/40 text-sm" data-icon="check">check</span>
+</button>
+<div class="flex-1">
+<h4 class="font-bold text-sm text-on-surface">Submit Ethics Approval Form</h4>
+<p class="text-[11px] text-tertiary font-bold mt-1">Due in 2 days</p>
+</div>
+<div class="flex gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+</div>
+<div class="group flex items-center gap-4 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all">
+<button class="w-6 h-6 rounded-full border-2 border-primary/40 flex items-center justify-center hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined text-transparent group-hover:text-primary/40 text-sm" data-icon="check">check</span>
+</button>
+<div class="flex-1">
+<h4 class="font-bold text-sm text-on-surface">Prep presentation for Lab Meeting</h4>
+<p class="text-[11px] text-on-surface-variant mt-1">Tomorrow, 10:00 AM</p>
+</div>
+</div>
+<div class="group flex items-center gap-4 p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all">
+<button class="w-6 h-6 rounded-full border-2 border-primary/40 flex items-center justify-center hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined text-transparent group-hover:text-primary/40 text-sm" data-icon="check">check</span>
+</button>
+<div class="flex-1">
+<h4 class="font-bold text-sm text-on-surface">Review Statistics Notes (CH 4-6)</h4>
+<p class="text-[11px] text-secondary font-bold mt-1">Focus Session Planned</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Academic Insights (6 cols - Glassmorphism) -->
+<div class="md:col-span-6 glass-card rounded-xl p-8 border border-white/50 relative overflow-hidden flex flex-col justify-between">
+<div class="relative z-10">
+<h3 class="text-xl font-bold mb-2">Academic Insights</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Based on your recent study patterns, you're 15% more productive during evening sessions when working on <span class="font-bold text-primary">Quantitative Analysis</span>.</p>
+</div>
+<div class="mt-6 flex gap-4 relative z-10">
+<div class="flex-1 bg-white/40 p-4 rounded-xl">
+<p class="text-[10px] font-bold uppercase text-on-surface-variant mb-1">Estimated GPA</p>
+<p class="text-2xl font-extrabold text-tertiary">3.82</p>
+</div>
+<div class="flex-1 bg-white/40 p-4 rounded-xl">
+<p class="text-[10px] font-bold uppercase text-on-surface-variant mb-1">Tasks Done</p>
+<p class="text-2xl font-extrabold text-secondary">84%</p>
+</div>
+</div>
+<!-- Decorative background shapes -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="absolute top-0 left-0 w-full h-full opacity-5 bg-[linear-gradient(135deg,#00478d,#5000d2)]"></div>
+</div>
+</div>
+</div>
+<!-- Quick Action FAB (Suppressing as per mandate on Details/Focus, but active for Dashboard) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform active:scale-95 z-50">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</main>
+</body></html>
