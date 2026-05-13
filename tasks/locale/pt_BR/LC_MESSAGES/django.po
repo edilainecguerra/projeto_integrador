@@ -43,10 +43,6 @@ msgstr "Data de Vencimento"
 msgid "Priority"
 msgstr "Prioridade"
 
-#: ../models.py:18
-msgid "Completed"
-msgstr "Concluída"
-
 #: ../models.py:21
 msgid "Task"
 msgstr "Tarefa"
@@ -87,6 +83,22 @@ msgstr "Excluir"
 msgid "Login"
 msgstr "Entrar"
 
+#: ../../tasks/login.html:1
+msgid "Login - StudyFlow"
+msgstr "Entrar - StudyFlow"
+
+#: ../../tasks/login.html:5
+msgid "Welcome back"
+msgstr "Bem-vindo de volta"
+
+#: ../../tasks/login.html:6
+msgid "Sign in to StudyFlow"
+msgstr "Faça login no StudyFlow"
+
+#: ../../tasks/login.html:7
+msgid "Use your credentials to manage your study tasks."
+msgstr "Use suas credenciais para gerenciar suas tarefas de estudo."
+
 #: ../../tasks/login.html:5
 msgid "Username"
 msgstr "Usuário"
@@ -99,18 +111,281 @@ msgstr "Senha"
 msgid "Enter"
 msgstr "Entrar"
 
-#: ../../tasks/new.html:1
-msgid "New Task"
-msgstr "Nova Tarefa"
-
-#: ../../tasks/new.html:5
-msgid "Title"
-msgstr "Título"
-
-#: ../../tasks/new.html:8
-msgid "Due Date"
-msgstr "Data de Vencimento"
-
 #: ../../tasks/new.html:11
 msgid "Save"
 msgstr "Salvar"
+
+#: ../../tasks/home.html:1
+msgid "StudyFlow Home"
+msgstr "Início do StudyFlow"
+
+#: ../../tasks/home.html:10
+msgid "Dashboard"
+msgstr "Painel"
+
+#: ../../tasks/home.html:15
+msgid "Welcome back, %(username)s."
+msgstr "Bem-vindo de volta, %(username)s."
+
+#: ../../tasks/home.html:15
+msgid "Welcome to your study dashboard."
+msgstr "Bem-vindo ao seu painel de estudo."
+
+#: ../../tasks/home.html:18
+msgid "Track your weekly progress, manage upcoming tasks, and keep your study flow consistent."
+msgstr "Acompanhe seu progresso semanal, gerencie as próximas tarefas e mantenha seu fluxo de estudos consistente."
+
+#: ../../tasks/home.html:22
+msgid "Progress summary"
+msgstr "Resumo do progresso"
+
+#: ../../tasks/home.html:26
+msgid "Tasks completed"
+msgstr "Tarefas concluídas"
+
+#: ../../tasks/home.html:28
+msgid "done"
+msgstr "concluídas"
+
+#: ../../tasks/home.html:40
+msgid "Weekly Progress"
+msgstr "Progresso semanal"
+
+#: ../../tasks/home.html:41
+msgid "Focus hours across your study plan"
+msgstr "Horas de foco ao longo do seu plano de estudo"
+
+#: ../../tasks/home.html:45
+msgid "Select week range"
+msgstr "Selecionar intervalo de semana"
+
+#: ../../tasks/home.html:48
+msgid "This Week"
+msgstr "Esta semana"
+
+#: ../../tasks/home.html:49
+msgid "Last Week"
+msgstr "Semana passada"
+
+#: ../../tasks/home.html:54
+msgid "No progress"
+msgstr "Sem progresso"
+
+#: ../../tasks/home.html:55
+msgid "Light progress"
+msgstr "Progresso leve"
+
+#: ../../tasks/home.html:56
+msgid "Steady progress"
+msgstr "Progresso constante"
+
+#: ../../tasks/home.html:57
+msgid "Strong progress"
+msgstr "Progresso forte"
+
+#: ../../tasks/home.html:69
+msgid "tasks completed"
+msgstr "tarefas concluídas"
+
+#: ../../tasks/home.html:74
+msgid "task(s) done"
+msgstr "tarefa(s) concluída(s)"
+
+#: ../../tasks/home.html:86
+msgid "Today's Schedule"
+msgstr "Agenda de hoje"
+
+#: ../../tasks/home.html:87
+msgid "What’s next"
+msgstr "O que vem a seguir"
+
+#: ../../tasks/home.html:95
+msgid "Overdue"
+msgstr "Atrasada"
+
+#: ../../tasks/home.html:95
+msgid "Due"
+msgstr "Vencimento"
+
+#: ../../tasks/home.html:99
+msgid "No description added."
+msgstr "Nenhuma descrição adicionada."
+
+#: ../../tasks/home.html:103
+msgid "No upcoming tasks planned for today."
+msgstr "Nenhuma tarefa agendada para hoje."
+
+#: ../../tasks/home.html:111
+msgid "Priority Queue"
+msgstr "Fila de prioridade"
+
+#: ../../tasks/home.html:112
+msgid "Open tasks"
+msgstr "Tarefas abertas"
+
+#: ../../tasks/home.html:120
+msgid "High priority"
+msgstr "Prioridade alta"
+
+#: ../../tasks/home.html:120
+msgid "Medium priority"
+msgstr "Prioridade média"
+
+#: ../../tasks/home.html:120
+msgid "Low priority"
+msgstr "Prioridade baixa"
+
+#: ../../tasks/home.html:125
+msgid "You are clear for now. Add a task to build your next study sprint."
+msgstr "Você está livre por enquanto. Adicione uma tarefa para iniciar seu próximo sprint de estudos."
+
+#: ../../tasks/home.html:132
+msgid "Academic Insights"
+msgstr "Insights acadêmicos"
+
+#: ../../tasks/home.html:133
+msgid "Your momentum this week"
+msgstr "Seu ritmo esta semana"
+
+#: ../../tasks/home.html:134
+msgid "Keep consistency in your daily completions to strengthen your study streak and reduce overdue tasks."
+msgstr "Mantenha consistência nas suas conclusões diárias para fortalecer sua sequência de estudos e reduzir tarefas atrasadas."
+
+#: ../../tasks/home.html:138
+msgid "Total tasks"
+msgstr "Tarefas totais"
+
+#: ../../tasks/home.html:142
+msgid "Completion"
+msgstr "Conclusão"
+
+#: ../../tasks/home.html:156
+msgid "Completed tasks"
+msgstr "Tarefas concluídas"
+
+#: ../../tasks/home.html:157
+msgid "Recent achievements"
+msgstr "Conquistas recentes"
+
+#: ../../tasks/home.html:159
+msgid "See all tasks"
+msgstr "Ver todas as tarefas"
+
+#: ../../tasks/home.html:167
+msgid "Done"
+msgstr "Concluído"
+
+#: ../../tasks/home.html:187
+msgid "No completed tasks yet"
+msgstr "Ainda não há tarefas concluídas"
+
+#: ../../tasks/home.html:188
+msgid "Finish a task to see it here in your progress view."
+msgstr "Conclua uma tarefa para vê-la aqui na visualização de progresso."
+
+#: ../../tasks/focus_timer.html:1
+msgid "Focus Timer"
+msgstr "Temporizador de Foco"
+
+#: ../../tasks/focus_timer.html:5
+msgid "Stay in the zone with Pomodoro rhythm."
+msgstr "Mantenha o foco com o ritmo Pomodoro."
+
+#: ../../tasks/focus_timer.html:8
+msgid "Session based"
+msgstr "Baseado em sessões"
+
+#: ../../tasks/focus_timer.html:12
+msgid "Use focused work intervals with short breaks to boost concentration and finish more study tasks."
+msgstr "Use intervalos de trabalho focado com pequenas pausas para aumentar a concentração e concluir mais tarefas de estudo."
+
+#: ../../tasks/focus_timer.html:19
+msgid "Current mode"
+msgstr "Modo atual"
+
+#: ../../tasks/focus_timer.html:22
+msgid "Start"
+msgstr "Iniciar"
+
+#: ../../tasks/focus_timer.html:23
+msgid "Reset"
+msgstr "Redefinir"
+
+#: ../../tasks/focus_timer.html:26
+msgid "Focus 25"
+msgstr "Foco 25"
+
+#: ../../tasks/focus_timer.html:27
+msgid "Short break 5"
+msgstr "Pausa curta 5"
+
+#: ../../tasks/focus_timer.html:28
+msgid "Long break 15"
+msgstr "Pausa longa 15"
+
+#: ../../tasks/focus_timer.html:34
+msgid "Custom"
+msgstr "Personalizado"
+
+#: ../../tasks/focus_timer.html:36
+msgid "Custom timer"
+msgstr "Temporizador personalizado"
+
+#: ../../tasks/focus_timer.html:43
+msgid "How it works"
+msgstr "Como funciona"
+
+#: ../../tasks/focus_timer.html:44
+msgid "Pomodoro cadence"
+msgstr "Cadência Pomodoro"
+
+#: ../../tasks/focus_timer.html:45
+msgid "Alternate between focused work and breaks to maintain energy. After four sessions, take a longer rest."
+msgstr "Alterne entre trabalho focado e pausas para manter a energia. Após quatro sessões, faça um descanso mais longo."
+
+#: ../../tasks/focus_timer.html:52
+msgid "minutes"
+msgstr "minutos"
+
+#: ../../tasks/focus_timer.html:58
+msgid "Short break"
+msgstr "Pausa curta"
+
+#: ../../tasks/focus_timer.html:63
+msgid "Long break"
+msgstr "Pausa longa"
+
+#: ../../tasks/focus_timer.html:70
+msgid "Tips"
+msgstr "Dicas"
+
+#: ../../tasks/focus_timer.html:73
+msgid "Choose a single task for each session."
+msgstr "Escolha uma única tarefa para cada sessão."
+
+#: ../../tasks/focus_timer.html:74
+msgid "Put your phone away while the timer runs."
+msgstr "Afaste o telefone enquanto o temporizador estiver funcionando."
+
+#: ../../tasks/focus_timer.html:75
+msgid "Take a walk during the long break."
+msgstr "Faça uma caminhada durante a pausa longa."
+
+#: ../../tasks/focus_timer.html:98
+msgid "Pause"
+msgstr "Pausar"
+
+msgid "Focus timer"
+msgstr "Temporizador de foco"
+
+msgid "Logged in"
+msgstr "Logado"
+
+msgid "Logged out"
+msgstr "Deslogado"
+
+msgid "Sign out"
+msgstr "Sair"
+
+msgid "Sign in to access your study tasks and progress."
+msgstr "Faça login para acessar suas tarefas de estudo e progresso."
